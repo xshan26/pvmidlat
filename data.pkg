@@ -1,0 +1,8 @@
+# Packages
+ &PACKAGES
+ usediagnostics=.TRUE.
+ useOBCS=.FALSE.
+ useFLT =.FALSE.
+ usePTRACERS=.FALSE.
+ uselayers=.TRUE.
+ &

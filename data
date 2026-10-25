@@ -1,0 +1,75 @@
+# Model parameters
+# Continuous equation parameters
+ &PARM01
+ tRef= 
+   19.9996,  19.9965,  19.9902,  19.9809,  19.9684,  19.9392,  19.8811,  19.8042,  19.7089,  19.5958,
+   19.4655,  19.3187,  19.1564,  18.9793,  18.7884,  18.5848,  18.3696,  18.1438,  17.9087,  17.6654,
+   17.4151,  17.1589,  16.8981,  16.6338,  16.3673,  16.0995,  15.8315,  15.5645,  15.2993,  15.0369,
+   14.7782,  14.5239,  14.2748,  14.0315,  13.7946,  13.5647,  13.3422,  13.1275,  12.9208,  12.7225,
+   12.4411,  12.0961,  11.7859,  11.5098,  11.2664,  11.0540,  10.8704,  10.7132,  10.5798,  10.4677,
+   10.3536,  10.2488,  10.1615,  10.0835,  10.0330,  10.0102,  10.0026,  10.0006,  10.0001,  10.0000,
+ sRef=60*35.0,
+ viscAz=1.e-4,
+# viscAh=0.0,
+ viscC2Smag=2.5,
+ no_slip_sides=.TRUE.,
+ no_slip_bottom=.TRUE.,
+ diffKzT=1.E-5,
+ diffKzS=1.E-5,
+ f0=0.727e-4,
+ beta=2.0E-11,
+ tAlpha=0.2E-3,
+ sBeta =0.0E-3,
+ rigidLid=.FALSE.,
+ implicitFreeSurface=.TRUE.,
+ nonlinFreeSurf=3,
+ exactConserv=.TRUE.,
+ staggerTimeStep=.TRUE.,
+ eosType='LINEAR',
+ readBinaryPrec=64,
+ hFacMin=0.1,
+ bottomDragLinear=1.e-3,
+ implicitDiffusion=.TRUE.,
+ implicitViscosity=.TRUE.,
+ tempAdvScheme=33,
+ saltAdvScheme=33,
+ useSingleCpuIO=.TRUE.,
+ vectorInvariantMomentum=.TRUE.,
+ ivdc_kappa=1000.0,
+ &
+# Elliptic solver parameters
+ &PARM02
+ cg2dMaxIters=1000,
+ cg2dTargetResidual=1.E-11,
+ &
+# Time stepping parameters
+ &PARM03
+ tauCD=0.,
+ startTime=0.0,
+ endTime=1.86624e+9,
+ deltaT=900.0,
+ abEps=0.1,
+ pChkptFreq=0.0,
+ chkptFreq=1.5552e+7,
+ dumpFreq=5.184e+6,
+ monitorFreq=3.1104e+7,
+ cAdjFreq=0,
+ forcing_In_AB=.FALSE.,
+ tauThetaClimRelax=1728000.,
+ &
+# Gridding parameters
+ &PARM04
+ usingCartesianGrid=.TRUE.,
+ usingSphericalPolarGrid=.FALSE.,
+ dXspacing=10e+3,
+ dYspacing=10e+3,
+ delZ=5*10,35*25,10*50,2*75,100,150,175,5*200,
+ &
+ &PARM05
+ bathyFile='topog.bin',
+ ThetaClimFile='SST.bin',
+ zonalWindFile='taux.bin',
+ &
+ &PARM06
+ XRW=0.e+3, XRE=0.e+3, YRS=0.e+3, YRN=0.e+3, trestore=259200.,
+ &

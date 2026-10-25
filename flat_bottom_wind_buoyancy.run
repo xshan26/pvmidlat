@@ -1,0 +1,33 @@
+#
+E=flat_bottom_wind_buoyancy
+DATA=/home/shanxuan/MOC/run_setting
+SRC=/home/shanxuan/MOC/binary
+RST=/home/shanxuan/MOC/run_result/${E}/spinup/restart
+
+rm data.*
+rm mitgcm
+rm eedata
+rm *.bin
+rm *.forcing
+rm *.init
+rm *.data
+rm *.meta
+
+cp ${DATA}/${E}/spinup/data data
+cp ${DATA}/${E}/spinup/data.pkg data.pkg
+cp ${DATA}/${E}/spinup/data.layers data.layers
+cp ${DATA}/${E}/spinup/data.diagnostics data.diagnostics
+cp ${DATA}/${E}/spinup/eedata eedata
+cp ${DATA}/${E}/spinup/topog_flat_closed.bin topog.bin
+cp ${DATA}/${E}/spinup/SST.bin SST.bin
+cp ${DATA}/${E}/spinup/taux.bin taux.bin
+
+#cp ${RST}/pickup.0003456000.data .
+#cp ${RST}/pickup.0003456000.meta .
+
+cp ${SRC}/VEC360x360x60np288 mitsrc
+
+cp ${DATA}/${E}/spinup/${E}.sh ${E}.sh
+sbatch ${E}.sh
+
+
